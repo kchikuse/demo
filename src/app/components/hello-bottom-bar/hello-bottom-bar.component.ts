@@ -1,15 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  ChangeDetectionStrategy,
+  EventEmitter,
+  Output,
+} from '@angular/core';
 
 @Component({
-  selector: 'app-hello-bottom-bar',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  selector: 'hello-bottom-bar',
   templateUrl: './hello-bottom-bar.component.html',
-  styleUrls: ['./hello-bottom-bar.component.scss']
+  styleUrls: ['./hello-bottom-bar.component.scss'],
 })
-export class HelloBottomBarComponent implements OnInit {
+export class HelloBottomBarComponent {
+  @Output() clicked = new EventEmitter<boolean>();
 
-  constructor() { }
-
-  ngOnInit(): void {
+  onBackClick(): void {
+    this.clicked.emit(false);
   }
 
+  onNextClick(): void {
+    this.clicked.emit(true);
+  }
 }

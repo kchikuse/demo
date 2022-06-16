@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
+import { StepConfig } from 'src/app/interfaces/step-config.interface';
 
 @Component({
-  selector: 'app-hello-content',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  selector: 'hello-content',
   templateUrl: './hello-content.component.html',
-  styleUrls: ['./hello-content.component.scss']
+  styleUrls: ['./hello-content.component.scss'],
 })
-export class HelloContentComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class HelloContentComponent {
+  @Input() stepConfig: StepConfig | undefined;
 }

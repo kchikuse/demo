@@ -1,0 +1,26 @@
+.topbar {
+  .page-item .page-link {
+    display: flex;
+    justify-content: center;
+    color: var(--blu-color);
+    border: solid 2px var(--blu-color);
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    margin: 5px;
+
+    &.active {
+      background-color: var(--blu-color);
+      color: white;
+    }
+  }
+
+  .thin-blue-line {
+    background-color: var(--blu-color);
+    position: relative;
+    top: 28px;
+    height: 2px;
+    width: 100%;
+    z-index: -1;
+  }
+}

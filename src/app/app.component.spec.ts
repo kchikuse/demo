@@ -1,15 +1,18 @@
 import { TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { HelloBottomBarComponent } from './components/hello-bottom-bar/hello-bottom-bar.component';
+import { HelloContentComponent } from './components/hello-content/hello-content.component';
+import { HelloTopBarComponent } from './components/hello-top-bar/hello-top-bar.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
+      imports: [],
       declarations: [
-        AppComponent
+        AppComponent,
+        HelloBottomBarComponent,
+        HelloContentComponent,
+        HelloTopBarComponent,
       ],
     }).compileComponents();
   });
@@ -18,18 +21,5 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'demo'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('demo');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('demo app is running!');
   });
 });

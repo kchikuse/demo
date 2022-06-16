@@ -1,1 +1,12 @@
-<p>hello-top-bar works!</p>
+<div class="topbar">
+  <div class="thin-blue-line"></div>
+  <ul class="pagination justify-content-center">
+    <li class="page-item" *ngFor="let circle of circles; trackBy: trackCircles">
+      <span
+        class="page-link"
+        [ngClass]="circle.style"
+        [textContent]="circle.value"
+      ></span>
+    </li>
+  </ul>
+</div>

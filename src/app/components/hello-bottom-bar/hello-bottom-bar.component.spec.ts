@@ -8,9 +8,8 @@ describe('HelloBottomBarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HelloBottomBarComponent ]
-    })
-    .compileComponents();
+      declarations: [HelloBottomBarComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -19,7 +18,25 @@ describe('HelloBottomBarComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should emit false if the back button is clicked', () => {
+    // Assemble
+    const clickedSpy = spyOn(component.clicked, 'emit');
+
+    // Act
+    component.onBackClick();
+
+    // Assert
+    expect(clickedSpy).toHaveBeenCalledOnceWith(false);
+  });
+
+  it('should emit true if the next button is clicked', () => {
+    // Assemble
+    const clickedSpy = spyOn(component.clicked, 'emit');
+
+    // Act
+    component.onNextClick();
+
+    // Assert
+    expect(clickedSpy).toHaveBeenCalledOnceWith(true);
   });
 });
